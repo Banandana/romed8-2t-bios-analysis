@@ -1,0 +1,7632 @@
+{
+  "summary": {
+    "total_settings_examined": 1593,
+    "suppressed_total": 134,
+    "permanent": 17,
+    "admin_only": 0,
+    "user_only": 0,
+    "conditional": 117
+  },
+  "settings": [
+    {
+      "module": "AmdPbsSetupDxe",
+      "formset_guid": "B863B959-0EC6-4033-99C1-8FD89F040222",
+      "formset_title": "AMD PBS",
+      "form_id": "0xc",
+      "form_title": "RAS",
+      "kind": "Numeric",
+      "prompt": "SMI Threshold",
+      "help": "The [SMI Threshold] limits the number of [MCA Threshold and Deferred Error SMI source] per a Unit time (Defined by [SMI Scale]). (Default: 5 dec interrupts)",
+      "qid": "0xc",
+      "varstore_id": "0x1",
+      "offset": "0x1",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xb",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "AmdPbsSetupDxe"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7001",
+      "form_title": "CPU Common Options",
+      "kind": "Numeric",
+      "prompt": "SEV-ES ASID Space Limit",
+      "help": "SEV VMs using ASIDs below the SEV-ES ASID Space Limit must enable the SEV-ES feature. ASIDs from SEV-ES ASID Space Limit to (SEV ASID Count + 1) can only be used with SEV VMs. If this field is set to (SEV ASID Count + 1), all ASIDs are forced to be SEV-ES ASIDs. Hence, the valid values for this field is 1 - (SEV ASID Count + 1)",
+      "qid": "0x700d",
+      "varstore_id": "0x5000",
+      "offset": "0x28",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x11",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [
+        "force"
+      ],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7012",
+      "form_title": "Accept",
+      "kind": "Numeric",
+      "prompt": "Frequency (MHz)",
+      "help": "Current core frequency in MHz",
+      "qid": "0x1f",
+      "varstore_id": "0x5000",
+      "offset": "0x3a",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x7013",
+              "val": "0x2"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7012",
+      "form_title": "Accept",
+      "kind": "Numeric",
+      "prompt": "Voltage (uV)",
+      "help": "Voltage in uV (1V = 1000 * 1000 uV)",
+      "qid": "0x20",
+      "varstore_id": "0x5000",
+      "offset": "0x3e",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x7013",
+              "val": "0x2"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7012",
+      "form_title": "Accept",
+      "kind": "Numeric",
+      "prompt": "Pstate0 FID",
+      "help": "Specifies the core frequency multiplier. COF = 200MHz * FID / DID",
+      "qid": "0x7014",
+      "varstore_id": "0x5000",
+      "offset": "0x42",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x7013",
+              "val": "0x2"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7012",
+      "form_title": "Accept",
+      "kind": "Numeric",
+      "prompt": "Pstate0 DID",
+      "help": "Specifies the core frequency divisor (DID[0] should zero if DID[5:0]>1Ah).",
+      "qid": "0x7015",
+      "varstore_id": "0x5000",
+      "offset": "0x43",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x7013",
+              "val": "0x2"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7012",
+      "form_title": "Accept",
+      "kind": "Numeric",
+      "prompt": "Pstate0 VID",
+      "help": "Specifies the core voltage.",
+      "qid": "0x7016",
+      "varstore_id": "0x5000",
+      "offset": "0x44",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x7013",
+              "val": "0x2"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7039",
+      "form_title": "ACPI",
+      "kind": "OneOf",
+      "prompt": "ACPI SLIT remote relative distance",
+      "help": "Set the remote socket distance for 2P systems as near (2.8) or far (3.2).",
+      "qid": "0x5b",
+      "varstore_id": "0x5000",
+      "offset": "0xc2",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Near",
+          "value": "0"
+        },
+        {
+          "text": "Far",
+          "value": "1"
+        },
+        {
+          "text": "Auto",
+          "value": "255"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x5a",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7039",
+      "form_title": "ACPI",
+      "kind": "Numeric",
+      "prompt": "ACPI SLIT same socket distance",
+      "help": "Specify the distance to other physical domains within the same socket.",
+      "qid": "0x5d",
+      "varstore_id": "0x5000",
+      "offset": "0xc4",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x5a",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7039",
+      "form_title": "ACPI",
+      "kind": "Numeric",
+      "prompt": "ACPI SLIT remote socket distance",
+      "help": "Specify the distance to domains on the remote socket.",
+      "qid": "0x5e",
+      "varstore_id": "0x5000",
+      "offset": "0xc5",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x5a",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7039",
+      "form_title": "ACPI",
+      "kind": "Numeric",
+      "prompt": "ACPI SLIT local SLink distance",
+      "help": "Specify the distance to an SLink domain on the same socket.",
+      "qid": "0x5f",
+      "varstore_id": "0x5000",
+      "offset": "0xc6",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x5a",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7039",
+      "form_title": "ACPI",
+      "kind": "Numeric",
+      "prompt": "ACPI SLIT remote SLink distance",
+      "help": "Specify the distance to an SLink domain on the other socket.",
+      "qid": "0x60",
+      "varstore_id": "0x5000",
+      "offset": "0xc7",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x5a",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7039",
+      "form_title": "ACPI",
+      "kind": "Numeric",
+      "prompt": "ACPI SLIT local inter-SLink distance",
+      "help": "Specify the distance between two SLink domains on the same socket.",
+      "qid": "0x61",
+      "varstore_id": "0x5000",
+      "offset": "0xc8",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x5a",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7039",
+      "form_title": "ACPI",
+      "kind": "Numeric",
+      "prompt": "ACPI SLIT remote inter-SLink distance",
+      "help": "Specify the distance between two SLink domains, each on a different socket.",
+      "qid": "0x62",
+      "varstore_id": "0x5000",
+      "offset": "0xc9",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x5a",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Memory Clock Speed",
+      "help": "Specifies the memory clock frequency.",
+      "qid": "0x76",
+      "varstore_id": "0x5000",
+      "offset": "0xd7",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "667MHz",
+          "value": "20"
+        },
+        {
+          "text": "800MHz",
+          "value": "24"
+        },
+        {
+          "text": "933MHz",
+          "value": "28"
+        },
+        {
+          "text": "1067MHz",
+          "value": "32"
+        },
+        {
+          "text": "1200MHz",
+          "value": "36"
+        },
+        {
+          "text": "1333MHz",
+          "value": "40"
+        },
+        {
+          "text": "1467MHz",
+          "value": "44"
+        },
+        {
+          "text": "1600MHz",
+          "value": "48"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Tcl",
+      "help": "Specifies the CAS latency.",
+      "qid": "0x77",
+      "varstore_id": "0x5000",
+      "offset": "0xd8",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        },
+        {
+          "text": "10h Clk",
+          "value": "16"
+        },
+        {
+          "text": "11h Clk",
+          "value": "17"
+        },
+        {
+          "text": "12h Clk",
+          "value": "18"
+        },
+        {
+          "text": "13h Clk",
+          "value": "19"
+        },
+        {
+          "text": "14h Clk",
+          "value": "20"
+        },
+        {
+          "text": "15h Clk",
+          "value": "21"
+        },
+        {
+          "text": "16h Clk",
+          "value": "22"
+        },
+        {
+          "text": "17h Clk",
+          "value": "23"
+        },
+        {
+          "text": "18h Clk",
+          "value": "24"
+        },
+        {
+          "text": "19h Clk",
+          "value": "25"
+        },
+        {
+          "text": "1Ah Clk",
+          "value": "26"
+        },
+        {
+          "text": "1Bh Clk",
+          "value": "27"
+        },
+        {
+          "text": "1Ch Clk",
+          "value": "28"
+        },
+        {
+          "text": "1Dh Clk",
+          "value": "29"
+        },
+        {
+          "text": "1Eh Clk",
+          "value": "30"
+        },
+        {
+          "text": "1Fh Clk",
+          "value": "31"
+        },
+        {
+          "text": "20h Clk",
+          "value": "32"
+        },
+        {
+          "text": "21h Clk",
+          "value": "33"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trcdrd",
+      "help": "Specifies the RAS# Active to CAS# Read Delay Time.",
+      "qid": "0x78",
+      "varstore_id": "0x5000",
+      "offset": "0xd9",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        },
+        {
+          "text": "10h Clk",
+          "value": "16"
+        },
+        {
+          "text": "11h Clk",
+          "value": "17"
+        },
+        {
+          "text": "12h Clk",
+          "value": "18"
+        },
+        {
+          "text": "13h Clk",
+          "value": "19"
+        },
+        {
+          "text": "14h Clk",
+          "value": "20"
+        },
+        {
+          "text": "15h Clk",
+          "value": "21"
+        },
+        {
+          "text": "16h Clk",
+          "value": "22"
+        },
+        {
+          "text": "17h Clk",
+          "value": "23"
+        },
+        {
+          "text": "18h Clk",
+          "value": "24"
+        },
+        {
+          "text": "19h Clk",
+          "value": "25"
+        },
+        {
+          "text": "1Ah Clk",
+          "value": "26"
+        },
+        {
+          "text": "1Bh Clk",
+          "value": "27"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trcdwr",
+      "help": "Specifies the RAS# Active to CAS# Write Delay Time.",
+      "qid": "0x79",
+      "varstore_id": "0x5000",
+      "offset": "0xda",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0A Clk",
+          "value": "10"
+        },
+        {
+          "text": "0B Clk",
+          "value": "11"
+        },
+        {
+          "text": "0C Clk",
+          "value": "12"
+        },
+        {
+          "text": "0D Clk",
+          "value": "13"
+        },
+        {
+          "text": "0E Clk",
+          "value": "14"
+        },
+        {
+          "text": "0F Clk",
+          "value": "15"
+        },
+        {
+          "text": "10h Clk",
+          "value": "16"
+        },
+        {
+          "text": "11h Clk",
+          "value": "17"
+        },
+        {
+          "text": "12h Clk",
+          "value": "18"
+        },
+        {
+          "text": "13h Clk",
+          "value": "19"
+        },
+        {
+          "text": "14h Clk",
+          "value": "20"
+        },
+        {
+          "text": "15h Clk",
+          "value": "21"
+        },
+        {
+          "text": "16h Clk",
+          "value": "22"
+        },
+        {
+          "text": "17h Clk",
+          "value": "23"
+        },
+        {
+          "text": "18h Clk",
+          "value": "24"
+        },
+        {
+          "text": "19h Clk",
+          "value": "25"
+        },
+        {
+          "text": "1Ah Clk",
+          "value": "26"
+        },
+        {
+          "text": "1Bh Clk",
+          "value": "27"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trp",
+      "help": "Specifies Row Precharge Delay Time.",
+      "qid": "0x7a",
+      "varstore_id": "0x5000",
+      "offset": "0xdb",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        },
+        {
+          "text": "10h Clk",
+          "value": "16"
+        },
+        {
+          "text": "11h Clk",
+          "value": "17"
+        },
+        {
+          "text": "12h Clk",
+          "value": "18"
+        },
+        {
+          "text": "13h Clk",
+          "value": "19"
+        },
+        {
+          "text": "14h Clk",
+          "value": "20"
+        },
+        {
+          "text": "15h Clk",
+          "value": "21"
+        },
+        {
+          "text": "16h Clk",
+          "value": "22"
+        },
+        {
+          "text": "17h Clk",
+          "value": "23"
+        },
+        {
+          "text": "18h Clk",
+          "value": "24"
+        },
+        {
+          "text": "19h Clk",
+          "value": "25"
+        },
+        {
+          "text": "1Ah Clk",
+          "value": "26"
+        },
+        {
+          "text": "1Bh Clk",
+          "value": "27"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Tras",
+      "help": "Specifies the Active to Precharge Delay Time.",
+      "qid": "0x7b",
+      "varstore_id": "0x5000",
+      "offset": "0xdc",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "15h Clk",
+          "value": "21"
+        },
+        {
+          "text": "16h Clk",
+          "value": "22"
+        },
+        {
+          "text": "17h Clk",
+          "value": "23"
+        },
+        {
+          "text": "18h Clk",
+          "value": "24"
+        },
+        {
+          "text": "19h Clk",
+          "value": "25"
+        },
+        {
+          "text": "1Ah Clk",
+          "value": "26"
+        },
+        {
+          "text": "1Bh Clk",
+          "value": "27"
+        },
+        {
+          "text": "1Ch Clk",
+          "value": "28"
+        },
+        {
+          "text": "1Dh Clk",
+          "value": "29"
+        },
+        {
+          "text": "1Eh Clk",
+          "value": "30"
+        },
+        {
+          "text": "1Fh Clk",
+          "value": "31"
+        },
+        {
+          "text": "20h Clk",
+          "value": "32"
+        },
+        {
+          "text": "21h Clk",
+          "value": "33"
+        },
+        {
+          "text": "22h Clk",
+          "value": "34"
+        },
+        {
+          "text": "23h Clk",
+          "value": "35"
+        },
+        {
+          "text": "24h Clk",
+          "value": "36"
+        },
+        {
+          "text": "25h Clk",
+          "value": "37"
+        },
+        {
+          "text": "26h Clk",
+          "value": "38"
+        },
+        {
+          "text": "27h Clk",
+          "value": "39"
+        },
+        {
+          "text": "28h Clk",
+          "value": "40"
+        },
+        {
+          "text": "29h Clk",
+          "value": "41"
+        },
+        {
+          "text": "2Ah Clk",
+          "value": "42"
+        },
+        {
+          "text": "2Bh Clk",
+          "value": "43"
+        },
+        {
+          "text": "2Ch Clk",
+          "value": "44"
+        },
+        {
+          "text": "2Dh Clk",
+          "value": "45"
+        },
+        {
+          "text": "2Eh Clk",
+          "value": "46"
+        },
+        {
+          "text": "2Fh Clk",
+          "value": "47"
+        },
+        {
+          "text": "30h Clk",
+          "value": "48"
+        },
+        {
+          "text": "31h Clk",
+          "value": "49"
+        },
+        {
+          "text": "32h Clk",
+          "value": "50"
+        },
+        {
+          "text": "33h Clk",
+          "value": "51"
+        },
+        {
+          "text": "34h Clk",
+          "value": "52"
+        },
+        {
+          "text": "35h Clk",
+          "value": "53"
+        },
+        {
+          "text": "36h Clk",
+          "value": "54"
+        },
+        {
+          "text": "37h Clk",
+          "value": "55"
+        },
+        {
+          "text": "38h Clk",
+          "value": "56"
+        },
+        {
+          "text": "39h Clk",
+          "value": "57"
+        },
+        {
+          "text": "3Ah Clk",
+          "value": "58"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trc Ctrl",
+      "help": "Specify Trc",
+      "qid": "0x7c",
+      "varstore_id": "0x5000",
+      "offset": "0xdd",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TrrdS",
+      "help": "Specifies the Activate to Activate Delay Time, different bank group (tRRD_S)",
+      "qid": "0x7e",
+      "varstore_id": "0x5000",
+      "offset": "0xdf",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TrrdL",
+      "help": "Specifies the Activate to Activate Delay Time, same bank group (tRRD_L)",
+      "qid": "0x7f",
+      "varstore_id": "0x5000",
+      "offset": "0xe0",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Tfaw Ctrl",
+      "help": "Specify Tfaw",
+      "qid": "0x80",
+      "varstore_id": "0x5000",
+      "offset": "0xe1",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TwtrS",
+      "help": "Specifies the Minimum Write to Read Time, different bank group",
+      "qid": "0x82",
+      "varstore_id": "0x5000",
+      "offset": "0xe3",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TwtrL",
+      "help": "Specifies the Minimum Write to Read Time, same bank group",
+      "qid": "0x83",
+      "varstore_id": "0x5000",
+      "offset": "0xe4",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Twr Ctrl",
+      "help": "Specify Twr",
+      "qid": "0x84",
+      "varstore_id": "0x5000",
+      "offset": "0xe5",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trcpage Ctrl",
+      "help": "Specify Trcpage",
+      "qid": "0x86",
+      "varstore_id": "0x5000",
+      "offset": "0xe7",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TrdrdScL Ctrl",
+      "help": "Specify TrdrdScL",
+      "qid": "0x88",
+      "varstore_id": "0x5000",
+      "offset": "0xea",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TwrwrScL Ctrl",
+      "help": "Specify TwrwrScL",
+      "qid": "0x8a",
+      "varstore_id": "0x5000",
+      "offset": "0xec",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trfc Ctrl",
+      "help": "Specify Trfc",
+      "qid": "0x8c",
+      "varstore_id": "0x5000",
+      "offset": "0xee",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trfc2 Ctrl",
+      "help": "Specify Trfc2",
+      "qid": "0x8e",
+      "varstore_id": "0x5000",
+      "offset": "0xf1",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trfc4 Ctrl",
+      "help": "Specify Trfc4",
+      "qid": "0x90",
+      "varstore_id": "0x5000",
+      "offset": "0xf4",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Manual",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Tcwl",
+      "help": "Specifies the CAS Write Latency",
+      "qid": "0x92",
+      "varstore_id": "0x5000",
+      "offset": "0xf7",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "10h Clk",
+          "value": "16"
+        },
+        {
+          "text": "12h Clk",
+          "value": "18"
+        },
+        {
+          "text": "14h Clk",
+          "value": "20"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trtp",
+      "help": "Specifies the Read CAS# to Precharge Delay Time.",
+      "qid": "0x93",
+      "varstore_id": "0x5000",
+      "offset": "0xf8",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Tcke",
+      "help": "Specifies the CKE minimum high and low pulse width in memory clock cycles.",
+      "qid": "0x94",
+      "varstore_id": "0x5000",
+      "offset": "0xf9",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        },
+        {
+          "text": "10h Clk",
+          "value": "16"
+        },
+        {
+          "text": "11h Clk",
+          "value": "17"
+        },
+        {
+          "text": "12h Clk",
+          "value": "18"
+        },
+        {
+          "text": "13h Clk",
+          "value": "19"
+        },
+        {
+          "text": "14h Clk",
+          "value": "20"
+        },
+        {
+          "text": "15h Clk",
+          "value": "21"
+        },
+        {
+          "text": "16h Clk",
+          "value": "22"
+        },
+        {
+          "text": "17h Clk",
+          "value": "23"
+        },
+        {
+          "text": "18h Clk",
+          "value": "24"
+        },
+        {
+          "text": "19h Clk",
+          "value": "25"
+        },
+        {
+          "text": "1Ah Clk",
+          "value": "26"
+        },
+        {
+          "text": "1Bh Clk",
+          "value": "27"
+        },
+        {
+          "text": "1Ch Clk",
+          "value": "28"
+        },
+        {
+          "text": "1Dh Clk",
+          "value": "29"
+        },
+        {
+          "text": "1Eh Clk",
+          "value": "30"
+        },
+        {
+          "text": "1Fh Clk",
+          "value": "31"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Trdwr",
+      "help": "Specifies the Read to Write turnaround timing.",
+      "qid": "0x95",
+      "varstore_id": "0x5000",
+      "offset": "0xfa",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        },
+        {
+          "text": "10h Clk",
+          "value": "16"
+        },
+        {
+          "text": "11h Clk",
+          "value": "17"
+        },
+        {
+          "text": "12h Clk",
+          "value": "18"
+        },
+        {
+          "text": "13h Clk",
+          "value": "19"
+        },
+        {
+          "text": "14h Clk",
+          "value": "20"
+        },
+        {
+          "text": "15h Clk",
+          "value": "21"
+        },
+        {
+          "text": "16h Clk",
+          "value": "22"
+        },
+        {
+          "text": "17h Clk",
+          "value": "23"
+        },
+        {
+          "text": "18h Clk",
+          "value": "24"
+        },
+        {
+          "text": "19h Clk",
+          "value": "25"
+        },
+        {
+          "text": "1Ah Clk",
+          "value": "26"
+        },
+        {
+          "text": "1Bh Clk",
+          "value": "27"
+        },
+        {
+          "text": "1Ch Clk",
+          "value": "28"
+        },
+        {
+          "text": "1Dh Clk",
+          "value": "29"
+        },
+        {
+          "text": "1Eh Clk",
+          "value": "30"
+        },
+        {
+          "text": "1Fh Clk",
+          "value": "31"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "Twrrd",
+      "help": "Specifies the Write to Read turnaround timing.",
+      "qid": "0x96",
+      "varstore_id": "0x5000",
+      "offset": "0xfb",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TwrwrSc",
+      "help": "Specifies the Write to Write turnaround timing in the same chipselect.",
+      "qid": "0x97",
+      "varstore_id": "0x5000",
+      "offset": "0xfc",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TwrwrSd",
+      "help": "Specifies the Write to Write turnaround timing in the same DIMM.",
+      "qid": "0x98",
+      "varstore_id": "0x5000",
+      "offset": "0xfd",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TwrwrDd",
+      "help": "Specifies the Write to Write turnaround timing in a different DIMM.",
+      "qid": "0x99",
+      "varstore_id": "0x5000",
+      "offset": "0xfe",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TrdrdSc",
+      "help": "Specifies the Read to Read turnaround timing in the same chipselect.",
+      "qid": "0x9a",
+      "varstore_id": "0x5000",
+      "offset": "0xff",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TrdrdSd",
+      "help": "Specifies the Read to Read turnaround timing in the same DIMM.",
+      "qid": "0x9b",
+      "varstore_id": "0x5000",
+      "offset": "0x100",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "TrdrdDd",
+      "help": "Specifies the Read to Read turnaround timing in a different DIMM.",
+      "qid": "0x9c",
+      "varstore_id": "0x5000",
+      "offset": "0x101",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "1 Clk",
+          "value": "1"
+        },
+        {
+          "text": "2 Clk",
+          "value": "2"
+        },
+        {
+          "text": "3 Clk",
+          "value": "3"
+        },
+        {
+          "text": "4 Clk",
+          "value": "4"
+        },
+        {
+          "text": "5 Clk",
+          "value": "5"
+        },
+        {
+          "text": "6 Clk",
+          "value": "6"
+        },
+        {
+          "text": "7 Clk",
+          "value": "7"
+        },
+        {
+          "text": "8 Clk",
+          "value": "8"
+        },
+        {
+          "text": "9 Clk",
+          "value": "9"
+        },
+        {
+          "text": "0Ah Clk",
+          "value": "10"
+        },
+        {
+          "text": "0Bh Clk",
+          "value": "11"
+        },
+        {
+          "text": "0Ch Clk",
+          "value": "12"
+        },
+        {
+          "text": "0Dh Clk",
+          "value": "13"
+        },
+        {
+          "text": "0Eh Clk",
+          "value": "14"
+        },
+        {
+          "text": "0Fh Clk",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7046",
+      "form_title": "Accept",
+      "kind": "OneOf",
+      "prompt": "ProcODT",
+      "help": "Specifies the Processor ODT",
+      "qid": "0x9d",
+      "varstore_id": "0x5000",
+      "offset": "0x102",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "High Impedance",
+          "value": "0"
+        },
+        {
+          "text": "480 ohm",
+          "value": "1"
+        },
+        {
+          "text": "240 ohm",
+          "value": "2"
+        },
+        {
+          "text": "160 ohm",
+          "value": "3"
+        },
+        {
+          "text": "120 ohm",
+          "value": "8"
+        },
+        {
+          "text": "96 ohm",
+          "value": "9"
+        },
+        {
+          "text": "80 ohm",
+          "value": "10"
+        },
+        {
+          "text": "68.6 ohm",
+          "value": "11"
+        },
+        {
+          "text": "60 ohm",
+          "value": "24"
+        },
+        {
+          "text": "53.3 ohm",
+          "value": "25"
+        },
+        {
+          "text": "48 ohm",
+          "value": "26"
+        },
+        {
+          "text": "43.6 ohm",
+          "value": "27"
+        },
+        {
+          "text": "40 ohm",
+          "value": "56"
+        },
+        {
+          "text": "36.9 ohm",
+          "value": "57"
+        },
+        {
+          "text": "34.3 ohm",
+          "value": "58"
+        },
+        {
+          "text": "32 ohm",
+          "value": "59"
+        },
+        {
+          "text": "30 ohm",
+          "value": "62"
+        },
+        {
+          "text": "28.2 ohm",
+          "value": "63"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x75",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7041",
+      "form_title": "CAD Bus Configuration",
+      "kind": "Numeric",
+      "prompt": "AddrCmdSetup",
+      "help": "Setup time on CAD bus signals. Valid values 3Fh-0h.",
+      "qid": "0xa8",
+      "varstore_id": "0x5000",
+      "offset": "0x10c",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xa7",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7041",
+      "form_title": "CAD Bus Configuration",
+      "kind": "Numeric",
+      "prompt": "CsOdtSetup",
+      "help": "Setup time on CAD bus signals. Valid values 3Fh-0h.",
+      "qid": "0xa9",
+      "varstore_id": "0x5000",
+      "offset": "0x10d",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xa7",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7041",
+      "form_title": "CAD Bus Configuration",
+      "kind": "Numeric",
+      "prompt": "CkeSetup",
+      "help": "Setup time on CAD bus signals. Valid values 3Fh-0h.",
+      "qid": "0xaa",
+      "varstore_id": "0x5000",
+      "offset": "0x10e",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xa7",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7041",
+      "form_title": "CAD Bus Configuration",
+      "kind": "OneOf",
+      "prompt": "ClkDrvStren",
+      "help": "No help string",
+      "qid": "0xac",
+      "varstore_id": "0x5000",
+      "offset": "0x110",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "120.0 Ohm",
+          "value": "0"
+        },
+        {
+          "text": "60.0 Ohm",
+          "value": "1"
+        },
+        {
+          "text": "40.0 Ohm",
+          "value": "3"
+        },
+        {
+          "text": "30.0 Ohm",
+          "value": "7"
+        },
+        {
+          "text": "24.0 Ohm",
+          "value": "15"
+        },
+        {
+          "text": "20.0 Ohm",
+          "value": "31"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xab",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7041",
+      "form_title": "CAD Bus Configuration",
+      "kind": "OneOf",
+      "prompt": "AddrCmdDrvStren",
+      "help": "No help string",
+      "qid": "0xad",
+      "varstore_id": "0x5000",
+      "offset": "0x111",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "120.0 Ohm",
+          "value": "0"
+        },
+        {
+          "text": "60.0 Ohm",
+          "value": "1"
+        },
+        {
+          "text": "40.0 Ohm",
+          "value": "3"
+        },
+        {
+          "text": "30.0 Ohm",
+          "value": "7"
+        },
+        {
+          "text": "24.0 Ohm",
+          "value": "15"
+        },
+        {
+          "text": "20.0 Ohm",
+          "value": "31"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xab",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7041",
+      "form_title": "CAD Bus Configuration",
+      "kind": "OneOf",
+      "prompt": "CsOdtDrvStren",
+      "help": "No help string",
+      "qid": "0xae",
+      "varstore_id": "0x5000",
+      "offset": "0x112",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "120.0 Ohm",
+          "value": "0"
+        },
+        {
+          "text": "60.0 Ohm",
+          "value": "1"
+        },
+        {
+          "text": "40.0 Ohm",
+          "value": "3"
+        },
+        {
+          "text": "30.0 Ohm",
+          "value": "7"
+        },
+        {
+          "text": "24.0 Ohm",
+          "value": "15"
+        },
+        {
+          "text": "20.0 Ohm",
+          "value": "31"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xab",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7041",
+      "form_title": "CAD Bus Configuration",
+      "kind": "OneOf",
+      "prompt": "CkeDrvStren",
+      "help": "No help string",
+      "qid": "0xaf",
+      "varstore_id": "0x5000",
+      "offset": "0x113",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "120.0 Ohm",
+          "value": "0"
+        },
+        {
+          "text": "60.0 Ohm",
+          "value": "1"
+        },
+        {
+          "text": "40.0 Ohm",
+          "value": "3"
+        },
+        {
+          "text": "30.0 Ohm",
+          "value": "7"
+        },
+        {
+          "text": "24.0 Ohm",
+          "value": "15"
+        },
+        {
+          "text": "20.0 Ohm",
+          "value": "31"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xab",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7042",
+      "form_title": "Data Bus Configuration",
+      "kind": "OneOf",
+      "prompt": "RttNom",
+      "help": "No help string",
+      "qid": "0xb1",
+      "varstore_id": "0x5000",
+      "offset": "0x115",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Rtt_Nom Disable",
+          "value": "0"
+        },
+        {
+          "text": "RZQ/4",
+          "value": "1"
+        },
+        {
+          "text": "RZQ/2",
+          "value": "2"
+        },
+        {
+          "text": "RZQ/6",
+          "value": "3"
+        },
+        {
+          "text": "RZQ/1",
+          "value": "4"
+        },
+        {
+          "text": "RZQ/5",
+          "value": "5"
+        },
+        {
+          "text": "RZQ/3",
+          "value": "6"
+        },
+        {
+          "text": "RZQ/7",
+          "value": "7"
+        },
+        {
+          "text": "Auto",
+          "value": "255"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xb0",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7042",
+      "form_title": "Data Bus Configuration",
+      "kind": "OneOf",
+      "prompt": "RttWr",
+      "help": "No help string",
+      "qid": "0xb2",
+      "varstore_id": "0x5000",
+      "offset": "0x116",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Dynamic ODT Off",
+          "value": "0"
+        },
+        {
+          "text": "RZQ/2",
+          "value": "1"
+        },
+        {
+          "text": "RZQ/1",
+          "value": "2"
+        },
+        {
+          "text": "Hi-Z",
+          "value": "3"
+        },
+        {
+          "text": "RZQ/3",
+          "value": "4"
+        },
+        {
+          "text": "Auto",
+          "value": "255"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xb0",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7042",
+      "form_title": "Data Bus Configuration",
+      "kind": "OneOf",
+      "prompt": "RttPark",
+      "help": "No help string",
+      "qid": "0xb3",
+      "varstore_id": "0x5000",
+      "offset": "0x117",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Rtt_PARK Disable",
+          "value": "0"
+        },
+        {
+          "text": "RZQ/4",
+          "value": "1"
+        },
+        {
+          "text": "RZQ/2",
+          "value": "2"
+        },
+        {
+          "text": "RZQ/6",
+          "value": "3"
+        },
+        {
+          "text": "RZQ/1",
+          "value": "4"
+        },
+        {
+          "text": "RZQ/5",
+          "value": "5"
+        },
+        {
+          "text": "RZQ/3",
+          "value": "6"
+        },
+        {
+          "text": "RZQ/7",
+          "value": "7"
+        },
+        {
+          "text": "Auto",
+          "value": "255"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xb0",
+              "val": "0xff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7004",
+      "form_title": "NBIO Common Options",
+      "kind": "OneOf",
+      "prompt": "ACS Enable",
+      "help": "AER must be enabled for ACS enable to work",
+      "qid": "0xe7",
+      "varstore_id": "0x5000",
+      "offset": "0x156",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Auto",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xed",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x704d",
+      "form_title": "SMU Common Options",
+      "kind": "Numeric",
+      "prompt": "cTDP",
+      "help": "cTDP [W] 0 = Invalid value.",
+      "qid": "0x10c",
+      "varstore_id": "0x5000",
+      "offset": "0x186",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x10b",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x704d",
+      "form_title": "SMU Common Options",
+      "kind": "Numeric",
+      "prompt": "Package Power Limit",
+      "help": "Package Power Limit (PPT) [W]",
+      "qid": "0x111",
+      "varstore_id": "0x5000",
+      "offset": "0x191",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x110",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x704d",
+      "form_title": "SMU Common Options",
+      "kind": "Numeric",
+      "prompt": "BoostFmax",
+      "help": "Specify the boost Fmax frequency limit to apply to all cores (MHz)",
+      "qid": "0x11a",
+      "varstore_id": "0x5000",
+      "offset": "0x1a2",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x119",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7007",
+      "form_title": "NTB Common Options",
+      "kind": "OneOf",
+      "prompt": "NTB Location",
+      "help": "No help string",
+      "qid": "0x1cc",
+      "varstore_id": "0x5000",
+      "offset": "0x27f",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "Socket0-Die0",
+          "value": "0"
+        },
+        {
+          "text": "Socket0-Die1",
+          "value": "1"
+        },
+        {
+          "text": "Socket0-Die2",
+          "value": "2"
+        },
+        {
+          "text": "Socket0-Die3",
+          "value": "3"
+        },
+        {
+          "text": "Socket1-Die0",
+          "value": "4"
+        },
+        {
+          "text": "Socket1-Die1",
+          "value": "5"
+        },
+        {
+          "text": "Socket1-Die2",
+          "value": "6"
+        },
+        {
+          "text": "Socket1-Die3",
+          "value": "7"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1cb",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7007",
+      "form_title": "NTB Common Options",
+      "kind": "OneOf",
+      "prompt": "NTB active on PCIeCore",
+      "help": "NTB enable on PCIe Core",
+      "qid": "0x1cd",
+      "varstore_id": "0x5000",
+      "offset": "0x280",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "15"
+        },
+        {
+          "text": "Core0",
+          "value": "0"
+        },
+        {
+          "text": "Core1",
+          "value": "16"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1cb",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [
+        "pcie"
+      ],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7007",
+      "form_title": "NTB Common Options",
+      "kind": "OneOf",
+      "prompt": "NTB Mode",
+      "help": "Select NTB Mode (Core 0, Port 0)",
+      "qid": "0x1ce",
+      "varstore_id": "0x5000",
+      "offset": "0x281",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "NTB Disabled",
+          "value": "0"
+        },
+        {
+          "text": "NTB Primary",
+          "value": "1"
+        },
+        {
+          "text": "NTB Secondary",
+          "value": "2"
+        },
+        {
+          "text": "NTB Random",
+          "value": "3"
+        },
+        {
+          "text": "Auto",
+          "value": "15"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1cb",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "CbsSetupDxeSSP",
+      "formset_guid": "7A6A3896-4AF0-45E5-BA63-89357FBD6D63",
+      "formset_title": "AMD CBS",
+      "form_id": "0x7007",
+      "form_title": "NTB Common Options",
+      "kind": "OneOf",
+      "prompt": "Link Speed",
+      "help": "Select Link Speed for NTB Mode (Core 0, Port 0)",
+      "qid": "0x1cf",
+      "varstore_id": "0x5000",
+      "offset": "0x282",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Max Speed",
+          "value": "0"
+        },
+        {
+          "text": "Gen 1",
+          "value": "1"
+        },
+        {
+          "text": "Gen 2",
+          "value": "2"
+        },
+        {
+          "text": "Gen 3",
+          "value": "3"
+        },
+        {
+          "text": "Auto",
+          "value": "15"
+        },
+        {
+          "text": "Gen 4",
+          "value": "4"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Auto",
+          "value": "2"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Auto",
+          "value": "255"
+        },
+        {
+          "text": "Detailed debug message",
+          "value": "5"
+        },
+        {
+          "text": "Coarse debug message",
+          "value": "10"
+        },
+        {
+          "text": "Stage completion",
+          "value": "200"
+        },
+        {
+          "text": "Firmware completion message only",
+          "value": "254"
+        },
+        {
+          "text": "Auto",
+          "value": "255"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1cb",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [
+        "link speed"
+      ],
+      "_debug": [],
+      "_module": "CbsSetupDxeSSP"
+    },
+    {
+      "module": "EventLogsSetupPage",
+      "formset_guid": "8BEB8C19-3FEC-4FAB-A378-C903E890FCAE",
+      "formset_title": "Event Logs",
+      "form_id": "0x2712",
+      "form_title": "Change Settings",
+      "kind": "OneOf",
+      "prompt": "Erase Event Log",
+      "help": "Choose options for erasing Smbios Event Log.  Erasing is done prior to any logging activation during reset.",
+      "qid": "0x3",
+      "varstore_id": "0x1",
+      "offset": "0xcd",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "No",
+          "value": "0"
+        },
+        {
+          "text": "Yes, Next reset",
+          "value": "1"
+        },
+        {
+          "text": "Yes, Every reset",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xc",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "EventLogsSetupPage"
+    },
+    {
+      "module": "EventLogsSetupPage",
+      "formset_guid": "8BEB8C19-3FEC-4FAB-A378-C903E890FCAE",
+      "formset_title": "Event Logs",
+      "form_id": "0x2712",
+      "form_title": "Change Settings",
+      "kind": "OneOf",
+      "prompt": "When Log is Full",
+      "help": "Choose options for reactions to a full Smbios Event Log.",
+      "qid": "0x4",
+      "varstore_id": "0x1",
+      "offset": "0xcc",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Do Nothing",
+          "value": "0"
+        },
+        {
+          "text": "Erase Immediately",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xc",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "EventLogsSetupPage"
+    },
+    {
+      "module": "EventLogsSetupPage",
+      "formset_guid": "8BEB8C19-3FEC-4FAB-A378-C903E890FCAE",
+      "formset_title": "Event Logs",
+      "form_id": "0x2712",
+      "form_title": "Change Settings",
+      "kind": "OneOf",
+      "prompt": "Log System Boot Event",
+      "help": "Choose option to enable/disable logging of System boot event",
+      "qid": "0x5",
+      "varstore_id": "0x1",
+      "offset": "0xce",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xc",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "EventLogsSetupPage"
+    },
+    {
+      "module": "EventLogsSetupPage",
+      "formset_guid": "8BEB8C19-3FEC-4FAB-A378-C903E890FCAE",
+      "formset_title": "Event Logs",
+      "form_id": "0x2712",
+      "form_title": "Change Settings",
+      "kind": "Numeric",
+      "prompt": "MECI",
+      "help": "Mutiple Event Count Increment:  The number of occurrences of a duplicate event that must pass before the multiple-event counter of log entry is updated.The value ranges from 1 to 255.",
+      "qid": "0x6",
+      "varstore_id": "0x1",
+      "offset": "0xd1",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xc",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "EventLogsSetupPage"
+    },
+    {
+      "module": "EventLogsSetupPage",
+      "formset_guid": "8BEB8C19-3FEC-4FAB-A378-C903E890FCAE",
+      "formset_title": "Event Logs",
+      "form_id": "0x2712",
+      "form_title": "Change Settings",
+      "kind": "Numeric",
+      "prompt": "METW",
+      "help": "Mutiple Event Time Window:  The number of minutes which must pass between duplicate log entries which utilize a multiple-event counter. The value ranges from 0 to 99 minutes.",
+      "qid": "0x7",
+      "varstore_id": "0x1",
+      "offset": "0xd0",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "EventLogsSetupPage"
+    },
+    {
+      "module": "EventLogsSetupPage",
+      "formset_guid": "8BEB8C19-3FEC-4FAB-A378-C903E890FCAE",
+      "formset_title": "Event Logs",
+      "form_id": "0x2712",
+      "form_title": "Change Settings",
+      "kind": "OneOf",
+      "prompt": "Log EFI Status Code",
+      "help": "Enable or disable the logging of EFI Status Codes as OEM reserved type E0 (if not already converted to legacy).",
+      "qid": "0x8",
+      "varstore_id": "0x1",
+      "offset": "0xcf",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xc",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "EventLogsSetupPage"
+    },
+    {
+      "module": "EventLogsSetupPage",
+      "formset_guid": "8BEB8C19-3FEC-4FAB-A378-C903E890FCAE",
+      "formset_title": "Event Logs",
+      "form_id": "0x2712",
+      "form_title": "Change Settings",
+      "kind": "OneOf",
+      "prompt": "Convert EFI Status Codes to Standard Smbios Type",
+      "help": "Enable or disable the converting of EFI Status Codes to Standard Smbios Types (Not all may be translated).",
+      "qid": "0x9",
+      "varstore_id": "0x1",
+      "offset": "0xd2",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xc",
+              "val": "0x1"
+            }
+          ]
+        },
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x8",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "EventLogsSetupPage"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1",
+      "form_title": "Main Configuration Page",
+      "kind": "Numeric",
+      "prompt": "",
+      "help": "",
+      "qid": "0x1517",
+      "varstore_id": "0x1234",
+      "offset": "0x35",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1",
+      "form_title": "Main Configuration Page",
+      "kind": "Numeric",
+      "prompt": "",
+      "help": "",
+      "qid": "0x1408",
+      "varstore_id": "0x1234",
+      "offset": "0x2d",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1",
+      "form_title": "Main Configuration Page",
+      "kind": "OneOf",
+      "prompt": "Link Speed Status",
+      "help": "Link Speed Status",
+      "qid": "0x110c",
+      "varstore_id": "0x1234",
+      "offset": "0x2c",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto Negotiated",
+          "value": "0"
+        },
+        {
+          "text": "10 Mbps Half",
+          "value": "1"
+        },
+        {
+          "text": "10 Mbps Full",
+          "value": "2"
+        },
+        {
+          "text": "100 Mbps Half",
+          "value": "3"
+        },
+        {
+          "text": "100 Mbps Full",
+          "value": "4"
+        },
+        {
+          "text": "1000 Mbps Half",
+          "value": "5"
+        },
+        {
+          "text": "1000 Mbps Full",
+          "value": "6"
+        },
+        {
+          "text": "10 Gbps Half",
+          "value": "7"
+        },
+        {
+          "text": "10 Gbps Full",
+          "value": "8"
+        },
+        {
+          "text": "20 Gbps",
+          "value": "9"
+        },
+        {
+          "text": "40 Gbps",
+          "value": "10"
+        },
+        {
+          "text": "N/A",
+          "value": "32"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1408",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [
+        "link speed"
+      ],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1",
+      "form_title": "Main Configuration Page",
+      "kind": "Numeric",
+      "prompt": "",
+      "help": "",
+      "qid": "0x1407",
+      "varstore_id": "0x1234",
+      "offset": "0x5",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1248",
+      "form_title": "Device Level Configuration",
+      "kind": "Numeric",
+      "prompt": "Number of Virtual Functions Supported",
+      "help": "Number of virtual functions supported on this port.",
+      "qid": "0x5",
+      "varstore_id": "0x1234",
+      "offset": "0x44",
+      "size_bits": 16,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1248",
+      "form_title": "Device Level Configuration",
+      "kind": "OneOf",
+      "prompt": "Shared Memory Features",
+      "help": "Disable usage of reserved memory regions to allow direct assignment of device to guest virtual machines.",
+      "qid": "0x1602",
+      "varstore_id": "0x1234",
+      "offset": "0x30",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1601",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1235",
+      "form_title": "NIC Configuration",
+      "kind": "Numeric",
+      "prompt": "",
+      "help": "",
+      "qid": "0x1181",
+      "varstore_id": "0x1234",
+      "offset": "0x33",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1235",
+      "form_title": "NIC Configuration",
+      "kind": "Numeric",
+      "prompt": "",
+      "help": "",
+      "qid": "0x8",
+      "varstore_id": "0x1234",
+      "offset": "0x0",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1235",
+      "form_title": "NIC Configuration",
+      "kind": "Numeric",
+      "prompt": "",
+      "help": "",
+      "qid": "0x9",
+      "varstore_id": "0x1234",
+      "offset": "0x2",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1235",
+      "form_title": "NIC Configuration",
+      "kind": "Numeric",
+      "prompt": "",
+      "help": "",
+      "qid": "0x1409",
+      "varstore_id": "0x1234",
+      "offset": "0x38",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1235",
+      "form_title": "NIC Configuration",
+      "kind": "Numeric",
+      "prompt": "Virtual LAN ID",
+      "help": "Specifies the ID (tag) to be used for PXE VLAN Mode. The VLAN ID must be in the range from 0 to 4094. PXE VLAN is disabled if value is set to 0.",
+      "qid": "0x110d",
+      "varstore_id": "0x1234",
+      "offset": "0x3a",
+      "size_bits": 16,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1409",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1235",
+      "form_title": "NIC Configuration",
+      "kind": "Numeric",
+      "prompt": "PCI Virtual Functions Advertised",
+      "help": "The number of PCI Virtual Functions (VFs) to be advertised on this port in non-NPAR mode.",
+      "qid": "0xa",
+      "varstore_id": "0x1234",
+      "offset": "0x40",
+      "size_bits": 16,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1501",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x140a",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1244",
+      "form_title": "iSCSI General Parameters",
+      "kind": "OneOf",
+      "prompt": "TCP/IP Parameters via DHCP",
+      "help": "This option is specific to IPv4. Controls the source of the initiator IP address, DHCP or static assignment.",
+      "qid": "0x1200",
+      "varstore_id": "0x1234",
+      "offset": "0x48",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1405",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "IntelLanUefiDriver",
+      "formset_guid": "77F2EA2F-4312-4569-85C4-583ACD8DB7E2",
+      "formset_title": "Intel PRO/1000 Network Connection",
+      "form_id": "0x1246",
+      "form_title": "iSCSI First Target Parameters",
+      "kind": "Numeric",
+      "prompt": "TCP Port",
+      "help": "Specifies the TCP Port number of the iSCSI target.",
+      "qid": "0x1221",
+      "varstore_id": "0x1234",
+      "offset": "0x3b2",
+      "size_bits": 16,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1405",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "IntelLanUefiDriver"
+    },
+    {
+      "module": "Ip4Dxe",
+      "formset_guid": "9B942747-154E-4D29-A436-BF7100C8B53B",
+      "formset_title": "IPv4 Network Configuration",
+      "form_id": "0x1",
+      "form_title": "",
+      "kind": "CheckBox",
+      "prompt": "Enable DHCP",
+      "help": "Enable DHCP",
+      "qid": "0x101",
+      "varstore_id": "0x1",
+      "offset": "0x1",
+      "size_bits": null,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x100",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Ip4Dxe"
+    },
+    {
+      "module": "PciDynamicSetup",
+      "formset_guid": "ACA9F304-21E2-4852-9875-7FF4881D67A5",
+      "formset_title": "PCI Subsystem Settings",
+      "form_id": "0x1",
+      "form_title": "PCI Subsystem Settings",
+      "kind": "CheckBox",
+      "prompt": "Hot-Plug Support",
+      "help": "Globally Enables or Disables Hot-Plug support for the entire System. If System has Hot-Plug capable Slots and this option set to Enabled, it provides a Setup screen for selecting PCI resource padding for Hot-Plug.",
+      "qid": "0x7008",
+      "varstore_id": "0xcccc",
+      "offset": "0x2",
+      "size_bits": null,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "PciDynamicSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "OneOf",
+      "prompt": "BMC Support",
+      "help": "Enable/Disable interfaces to communicate with BMC",
+      "qid": "0x1",
+      "varstore_id": "0x1",
+      "offset": "0x0",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "OneOf",
+      "prompt": "IPMI Interface Type",
+      "help": "Type of Interface to communicate BMC from HOST",
+      "qid": "0x2",
+      "varstore_id": "0x1",
+      "offset": "0x16",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Kcs Interface",
+          "value": "1"
+        },
+        {
+          "text": "Bt Interface",
+          "value": "3"
+        },
+        {
+          "text": "Ssif Interface",
+          "value": "4"
+        },
+        {
+          "text": "Ipmb Interface",
+          "value": "5"
+        },
+        {
+          "text": "Usb Interface",
+          "value": "6"
+        },
+        {
+          "text": "Oem1 Interface",
+          "value": "7"
+        },
+        {
+          "text": "Oem2 Interface",
+          "value": "8"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "OneOf",
+      "prompt": "FRB-2 Timer",
+      "help": "Enable or Disable FRB-2 timer(POST timer)",
+      "qid": "0x4",
+      "varstore_id": "0x1",
+      "offset": "0x21f",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        },
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "Numeric",
+      "prompt": "FRB-2 Timer timeout",
+      "help": "Enter value Between 1 to 30 min for FRB-2 Timer Expiration",
+      "qid": "0x5",
+      "varstore_id": "0x1",
+      "offset": "0x220",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "OneOf",
+      "prompt": "FRB-2 Timer Policy",
+      "help": "Configure how the system should respond if the FRB-2 Timer expires. Not available if FRB-2 Timer is disabled.",
+      "qid": "0x6",
+      "varstore_id": "0x1",
+      "offset": "0x221",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Do Nothing",
+          "value": "0"
+        },
+        {
+          "text": "Reset",
+          "value": "1"
+        },
+        {
+          "text": "Power Down",
+          "value": "2"
+        },
+        {
+          "text": "Power Cycle",
+          "value": "3"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "OneOf",
+      "prompt": "OS Watchdog Timer",
+      "help": "If enabled, starts a BIOS timer which can only be shut off by Management Software after the OS loads.  Helps determine that the OS successfully loaded or follows the OS Boot Watchdog Timer policy.",
+      "qid": "0x7",
+      "varstore_id": "0x1",
+      "offset": "0x222",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "Numeric",
+      "prompt": "OS Wtd Timer Timeout",
+      "help": "Enter the value Between 1 to 30 min for OS Boot Watchdog Timer Expiration. Not available if OS Boot Watchdog Timer is disabled.",
+      "qid": "0x8",
+      "varstore_id": "0x1",
+      "offset": "0x223",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "OneOf",
+      "prompt": "OS Wtd Timer Policy",
+      "help": "Configure how the system should respond if the OS Boot Watchdog Timer expires. Not available if OS Boot Watchdog Timer is disabled.",
+      "qid": "0x9",
+      "varstore_id": "0x1",
+      "offset": "0x224",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Do Nothing",
+          "value": "0"
+        },
+        {
+          "text": "Reset",
+          "value": "1"
+        },
+        {
+          "text": "Power Down",
+          "value": "2"
+        },
+        {
+          "text": "Power Cycle",
+          "value": "3"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2711",
+      "form_title": "Server Mgmt",
+      "kind": "OneOf",
+      "prompt": "Serial Mux",
+      "help": "Press <Enter> to enable or disable Serial Mux configuration.",
+      "qid": "0xa",
+      "varstore_id": "0x1",
+      "offset": "0x22d",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Yes",
+          "value": "1"
+        },
+        {
+          "text": "No",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2718",
+      "form_title": "BMC Network Configuration",
+      "kind": "OneOf",
+      "prompt": "Configuration address source",
+      "help": "Static/DHCP IP address",
+      "qid": "0xd",
+      "varstore_id": "0x1",
+      "offset": "0x19",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Static",
+          "value": "1"
+        },
+        {
+          "text": "DHCP",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2724",
+              "val": "0x2"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2718",
+      "form_title": "BMC Network Configuration",
+      "kind": "OneOf",
+      "prompt": "Configuration address source",
+      "help": "Static/DHCP IP address",
+      "qid": "0x11",
+      "varstore_id": "0x1",
+      "offset": "0x1a",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Static",
+          "value": "1"
+        },
+        {
+          "text": "DHCP",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2725",
+              "val": "0x2"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2718",
+      "form_title": "BMC Network Configuration",
+      "kind": "OneOf",
+      "prompt": "Manual setting IPMI LAN(IPV6)",
+      "help": "Select to configure LAN channel parameters statically or dynamically(by BIOS or BMC). Unspecified option will not modify any BMC network parameters during BIOS phase",
+      "qid": "0x15",
+      "varstore_id": "0x1",
+      "offset": "0x175",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "No Change",
+          "value": "0"
+        },
+        {
+          "text": "Static",
+          "value": "1"
+        },
+        {
+          "text": "DHCP",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2750",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2718",
+      "form_title": "BMC Network Configuration",
+      "kind": "OneOf",
+      "prompt": "Manual setting IPMI LAN(IPV6)",
+      "help": "Select to configure LAN channel parameters statically or dynamically(by BIOS or BMC). Unspecified option will not modify any BMC network parameters during BIOS phase",
+      "qid": "0x17",
+      "varstore_id": "0x1",
+      "offset": "0x176",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "No Change",
+          "value": "0"
+        },
+        {
+          "text": "Static",
+          "value": "1"
+        },
+        {
+          "text": "DHCP",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2751",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "ServerMgmtSetup",
+      "formset_guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+      "formset_title": "Server Mgmt",
+      "form_id": "0x2791",
+      "form_title": "BMC Tools",
+      "kind": "OneOf",
+      "prompt": "KCS control",
+      "help": "Select the KSC interface state after POST end. If [Enabled] is selected, the BMC will remain KCS interface after POST stage. If [Disabled] is selected, the BMC will disable KCS interface after POST stage",
+      "qid": "0x21",
+      "varstore_id": "0x1",
+      "offset": "0x2fa",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "No change",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x22",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "ServerMgmtSetup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2711",
+      "form_title": "Main",
+      "kind": "OneOf",
+      "prompt": "System Language",
+      "help": "Choose the system default language",
+      "qid": "0x7",
+      "varstore_id": "0xf009",
+      "offset": "0x0",
+      "size_bits": 16,
+      "options": [
+        {
+          "text": "",
+          "value": "0"
+        },
+        {
+          "text": "",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1d6",
+              "val": "0xffff"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2718",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  Disable Block Sid",
+      "help": "  Override to allow SID authentication in TCG Storage device",
+      "qid": "0x2a",
+      "varstore_id": "0x1",
+      "offset": "0x21",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1cd",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [
+        "override"
+      ],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2719",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  Security Device Support",
+      "help": "Enables or Disables BIOS support for security device. O.S. will not show Security Device. TCG EFI protocol and INT1A interface will not be available.",
+      "qid": "0x2b",
+      "varstore_id": "0x1",
+      "offset": "0x6",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1d2",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2719",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  Security Device Support",
+      "help": "Enables or Disables BIOS support for security device. O.S. will not show Security Device. TCG EFI protocol and INT1A interface will not be available.",
+      "qid": "0x2e",
+      "varstore_id": "0x1",
+      "offset": "0x6",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1d1",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x271a",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  SHA-1 PCR Bank",
+      "help": "Enable or Disable SHA-1 PCR Bank",
+      "qid": "0x33",
+      "varstore_id": "0x1",
+      "offset": "0x1a",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x3c",
+              "val": "0x1"
+            }
+          ]
+        },
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x32",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x271a",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  Pending operation",
+      "help": "Schedule an Operation for the Security Device. NOTE: Your Computer will reboot during restart in order to change State of Security Device.",
+      "qid": "0x38",
+      "varstore_id": "0x1",
+      "offset": "0x2",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "None",
+          "value": "0"
+        },
+        {
+          "text": "TPM Clear",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x32",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x271a",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  TPM 2.0 InterfaceType",
+      "help": "  Select the Communication Interface to TPM 20 Device.",
+      "qid": "0x3e",
+      "varstore_id": "0x1",
+      "offset": "0x12",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "CRB",
+          "value": "0"
+        },
+        {
+          "text": "TIS",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x32",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x271a",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  Device Select",
+      "help": "TPM 1.2 will restrict support to TPM 1.2 devices, TPM 2.0 will restrict support to TPM 2.0 devices, Auto will support both with the default set to TPM 2.0 devices if not found, TPM 1.2 devices will be enumerated ",
+      "qid": "0x3f",
+      "varstore_id": "0x1",
+      "offset": "0x13",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "TPM 1.2",
+          "value": "0"
+        },
+        {
+          "text": "TPM 2.0",
+          "value": "1"
+        },
+        {
+          "text": "Auto",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        },
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x32",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x271a",
+      "form_title": "Trusted Computing",
+      "kind": "OneOf",
+      "prompt": "  Disable Block Sid",
+      "help": "  Override to allow SID authentication in TCG Storage device",
+      "qid": "0x40",
+      "varstore_id": "0x1",
+      "offset": "0x21",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x1cd",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [
+        "override"
+      ],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x271e",
+      "form_title": "Chipset Configuration",
+      "kind": "OneOf",
+      "prompt": "Primary Graphics Adapter",
+      "help": "Select a primary VGA.",
+      "qid": "0x55",
+      "varstore_id": "0x1",
+      "offset": "0x16c",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Onboard VGA",
+          "value": "0"
+        },
+        {
+          "text": "PCI Express",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2760",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x271e",
+      "form_title": "Chipset Configuration",
+      "kind": "OneOf",
+      "prompt": "PCIE1 ASPM Support",
+      "help": "Configure the ASPM of PCIE1",
+      "qid": "0x5e",
+      "varstore_id": "0x1",
+      "offset": "0x15d",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "ASPM L0s",
+          "value": "1"
+        },
+        {
+          "text": "ASPM L1",
+          "value": "2"
+        },
+        {
+          "text": "ASPM L0sL1",
+          "value": "3"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [
+        "pcie"
+      ],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2722",
+      "form_title": "Redfish Host Interface Settings",
+      "kind": "Numeric",
+      "prompt": "Vlan ID",
+      "help": "Enter Vlan ID",
+      "qid": "0x6d",
+      "varstore_id": "0x1",
+      "offset": "0xad",
+      "size_bits": 32,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2729",
+      "form_title": "CRB Board",
+      "kind": "OneOf",
+      "prompt": "OnBrd/Ext VGA Select",
+      "help": "Select between onboard or external VGA support.",
+      "qid": "0x6e",
+      "varstore_id": "0x1",
+      "offset": "0xc9",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Auto",
+          "value": "0"
+        },
+        {
+          "text": "Onboard",
+          "value": "1"
+        },
+        {
+          "text": "External",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x136",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "USB Support",
+      "help": "USB Support Parameters",
+      "qid": "0x9e",
+      "varstore_id": "0x14",
+      "offset": "0x0",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdId",
+              "qid": "0x9e",
+              "oqid": "0x9e"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "Legacy USB Support",
+      "help": "Enables Legacy USB support. AUTO option disables legacy support if no USB devices are connected. DISABLE option will keep USB devices available only for EFI applications.",
+      "qid": "0x9f",
+      "varstore_id": "0x14",
+      "offset": "0x1",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "0"
+        },
+        {
+          "text": "UEFI Setup Only",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x9e",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "USB 2.0 Controller Mode",
+      "help": "Configures the USB 2.0 controller in HiSpeed (480Mbps) or FullSpeed (12Mbps).",
+      "qid": "0xa0",
+      "varstore_id": "0x14",
+      "offset": "0x2e",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "HiSpeed",
+          "value": "1"
+        },
+        {
+          "text": "FullSpeed",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "Legacy USB 3.0 Support",
+      "help": "Enable or disable Legacy OS Support for USB 3.0 devices.",
+      "qid": "0xa1",
+      "varstore_id": "0x14",
+      "offset": "0x2a",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Enabled",
+          "value": "1"
+        },
+        {
+          "text": "Disabled",
+          "value": "0"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "USB Mass Storage Driver Support",
+      "help": "Enable/Disable USB Mass Storage Driver Support.",
+      "qid": "0xa4",
+      "varstore_id": "0x14",
+      "offset": "0x2f",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x9e",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "Port 60/64 Emulation",
+      "help": "Enables I/O port 60h/64h emulation support. This should be enabled for the complete USB keyboard legacy support for non-USB aware OSes.",
+      "qid": "0xa5",
+      "varstore_id": "0x14",
+      "offset": "0x7",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x9e",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "USB transfer time-out",
+      "help": "The time-out value for Control, Bulk, and Interrupt transfers.",
+      "qid": "0xa6",
+      "varstore_id": "0x14",
+      "offset": "0x9",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "1 sec",
+          "value": "1"
+        },
+        {
+          "text": "5 sec",
+          "value": "5"
+        },
+        {
+          "text": "10 sec",
+          "value": "10"
+        },
+        {
+          "text": "20 sec",
+          "value": "20"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x9e",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "OneOf",
+      "prompt": "Device reset time-out",
+      "help": "USB mass storage device Start Unit command time-out.",
+      "qid": "0xa7",
+      "varstore_id": "0x14",
+      "offset": "0x8",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "10 sec",
+          "value": "0"
+        },
+        {
+          "text": "20 sec",
+          "value": "1"
+        },
+        {
+          "text": "30 sec",
+          "value": "2"
+        },
+        {
+          "text": "40 sec",
+          "value": "3"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x9e",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275c",
+      "form_title": "USB Configuration",
+      "kind": "Numeric",
+      "prompt": "Device power-up delay in seconds",
+      "help": "Delay range is 1..40 seconds, in one second increments",
+      "qid": "0xa9",
+      "varstore_id": "0x14",
+      "offset": "0x2d",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xa8",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275f",
+      "form_title": "Network Stack Configuration",
+      "kind": "OneOf",
+      "prompt": "IPv4 PXE Support",
+      "help": "Enable/Disable IPv4 PXE boot support. If disabled, IPv4 PXE boot support will not be available.",
+      "qid": "0xcb",
+      "varstore_id": "0x15",
+      "offset": "0x1",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xca",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275f",
+      "form_title": "Network Stack Configuration",
+      "kind": "OneOf",
+      "prompt": "IPv4 HTTP Support",
+      "help": "Enable/Disable IPv4 HTTP boot support. If disabled, IPv4 HTTP boot support will not be available.",
+      "qid": "0xcc",
+      "varstore_id": "0x15",
+      "offset": "0x6",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xca",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275f",
+      "form_title": "Network Stack Configuration",
+      "kind": "OneOf",
+      "prompt": "IPv6 PXE Support",
+      "help": "Enable/Disable IPv6 PXE boot support. If disabled, IPv6 PXE boot support will not be available.",
+      "qid": "0xcd",
+      "varstore_id": "0x15",
+      "offset": "0x2",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xca",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275f",
+      "form_title": "Network Stack Configuration",
+      "kind": "OneOf",
+      "prompt": "IPv6 HTTP Support",
+      "help": "Enable/Disable IPv6 HTTP boot support. If disabled, IPv6 HTTP boot support will not be available.",
+      "qid": "0xce",
+      "varstore_id": "0x15",
+      "offset": "0x7",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xca",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275f",
+      "form_title": "Network Stack Configuration",
+      "kind": "Numeric",
+      "prompt": "PXE boot wait time",
+      "help": "Wait time in seconds to press ESC key to abort the PXE boot. Use either +/- or numeric keys to set the value.",
+      "qid": "0xcf",
+      "varstore_id": "0x15",
+      "offset": "0x4",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xca",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x275f",
+      "form_title": "Network Stack Configuration",
+      "kind": "Numeric",
+      "prompt": "Media detect count",
+      "help": "Number of times the presence of media will be checked. Use either +/- or numeric keys to set the value.",
+      "qid": "0xd0",
+      "varstore_id": "0x15",
+      "offset": "0x5",
+      "size_bits": 8,
+      "options": [],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0xca",
+              "val": "0x0"
+            }
+          ]
+        },
+        {
+          "kind": "GrayOutIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x14a",
+              "val": "0x1"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2761",
+      "form_title": "CSM Configuration",
+      "kind": "OneOf",
+      "prompt": "HDD Connection Order",
+      "help": "Some OS require HDD handles to be adjusted, i.e. OS is installed on drive 80h.",
+      "qid": "0xd4",
+      "varstore_id": "0x1",
+      "offset": "0x10a",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Adjust",
+          "value": "0"
+        },
+        {
+          "text": "Keep",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x12d",
+              "val": "0x2"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2715",
+      "form_title": "Boot",
+      "kind": "OneOf",
+      "prompt": "Boot Option #%d",
+      "help": "Sets the system boot order",
+      "qid": "0x129",
+      "varstore_id": "0xf006",
+      "offset": "0x0",
+      "size_bits": 16,
+      "options": [
+        {
+          "text": "",
+          "value": "0"
+        },
+        {
+          "text": "",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdValList",
+              "qid": "0x149",
+              "vals": "65535"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2715",
+      "form_title": "Boot",
+      "kind": "OneOf",
+      "prompt": "Driver Option #%d",
+      "help": "Sets the system driver order",
+      "qid": "0x12a",
+      "varstore_id": "0xf",
+      "offset": "0x0",
+      "size_bits": 16,
+      "options": [
+        {
+          "text": "",
+          "value": "0"
+        },
+        {
+          "text": "",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdValList",
+              "qid": "0x14c",
+              "vals": "65535"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x27d2",
+      "form_title": "Boot",
+      "kind": "OneOf",
+      "prompt": "Boot Option #%d",
+      "help": "Sets the system boot order",
+      "qid": "0x12c",
+      "varstore_id": "0xf006",
+      "offset": "0x0",
+      "size_bits": 16,
+      "options": [
+        {
+          "text": "",
+          "value": "0"
+        },
+        {
+          "text": "",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdValList",
+              "qid": "0x149",
+              "vals": "65535"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x27d2",
+      "form_title": "Boot",
+      "kind": "OneOf",
+      "prompt": "Boot option filter",
+      "help": "This option controls Legacy/UEFI ROMs priority",
+      "qid": "0x12d",
+      "varstore_id": "0x1",
+      "offset": "0x10c",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "UEFI and Legacy",
+          "value": "0"
+        },
+        {
+          "text": "Legacy only",
+          "value": "1"
+        },
+        {
+          "text": "UEFI only",
+          "value": "2"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "EqIdVal",
+              "qid": "0x2760",
+              "val": "0x0"
+            }
+          ]
+        }
+      ],
+      "_class": "conditional",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    },
+    {
+      "module": "Setup",
+      "formset_guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+      "formset_title": "Setup",
+      "form_id": "0x2716",
+      "form_title": "Exit",
+      "kind": "OneOf",
+      "prompt": "Refresh attribute registry",
+      "help": "Refreshes the attribute registry in next boot. This will be helpful for complex condition evaluation",
+      "qid": "0x141",
+      "varstore_id": "0xb",
+      "offset": "0x0",
+      "size_bits": 8,
+      "options": [
+        {
+          "text": "Disabled",
+          "value": "0"
+        },
+        {
+          "text": "Enabled",
+          "value": "1"
+        }
+      ],
+      "conditions": [
+        {
+          "kind": "SuppressIf",
+          "exprs": [
+            {
+              "op": "True"
+            }
+          ]
+        }
+      ],
+      "_class": "permanent",
+      "_interest": [],
+      "_debug": [],
+      "_module": "Setup"
+    }
+  ],
+  "varstores_by_module": {
+    "AmdPbsSetupDxe": {
+      "0x1": {
+        "id": "0x1",
+        "guid": "A339D746-F678-49B3-9FC7-54CE0F9DF226",
+        "size": "0x80",
+        "name": "AMD_PBS_SETUP"
+      },
+      "0xf000": {
+        "id": "0xf000",
+        "guid": "E770BB69-BCB4-4D04-9E97-23FF9456FEAC",
+        "size": "0x1",
+        "name": "SystemAccess"
+      }
+    },
+    "CbsSetupDxeGN": {
+      "0x5000": {
+        "id": "0x5000",
+        "guid": "3A997502-647A-4C82-998E-52EF9486A247",
+        "size": "0x6cb",
+        "name": "AmdSetup"
+      }
+    },
+    "CbsSetupDxeSSP": {
+      "0x5000": {
+        "id": "0x5000",
+        "guid": "3A997502-647A-4C82-998E-52EF9486A247",
+        "size": "0x686",
+        "name": "AmdSetupSSP"
+      }
+    },
+    "CbsSetupDxeZP": {
+      "0x5000": {
+        "id": "0x5000",
+        "guid": "3A997502-647A-4C82-998E-52EF9486A247",
+        "size": "0x5b2",
+        "name": "AmdSetupZP"
+      }
+    },
+    "EventLogsSetupPage": {
+      "0x1": {
+        "id": "0x1",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x174",
+        "name": "Setup"
+      },
+      "0xf000": {
+        "id": "0xf000",
+        "guid": "E770BB69-BCB4-4D04-9E97-23FF9456FEAC",
+        "size": "0x1",
+        "name": "SystemAccess"
+      },
+      "0x2": {
+        "id": "0x2",
+        "guid": "ADDEBF82-A560-46B9-A280-78C6AB61AEDA",
+        "size": "0x4",
+        "name": "ErrorManager"
+      }
+    },
+    "HttpBootDxe": {
+      "0x1": {
+        "id": "0x1",
+        "guid": "4D20583A-7765-4E7A-8A67-DCDE74EE3EC5",
+        "size": "0x296",
+        "name": "HTTP_BOOT_CONFIG_IFR_NVDATA"
+      }
+    },
+    "IntelLanUefiDriver": {
+      "0x1234": {
+        "id": "0x1234",
+        "guid": "A31ABB16-C627-475B-988E-7EE0776740F3",
+        "size": "0x5a4",
+        "name": "UndiNVData"
+      }
+    },
+    "Ip4Dxe": {
+      "0x1": {
+        "id": "0x1",
+        "guid": "9B942747-154E-4D29-A436-BF7100C8B53B",
+        "size": "0x260",
+        "name": "IP4_CONFIG2_IFR_NVDATA"
+      }
+    },
+    "Ip6Dxe": {
+      "0x1": {
+        "id": "0x1",
+        "guid": "02EEA107-98DB-400E-9830-460A1542D799",
+        "size": "0x638",
+        "name": "IP6_CONFIG_IFR_NVDATA"
+      }
+    },
+    "PciDynamicSetup": {
+      "0xcccc": {
+        "id": "0xcccc",
+        "guid": "ACA9F304-21E2-4852-9875-7FF4881D67A5",
+        "size": "0x8",
+        "name": "PCI_COMMON"
+      }
+    },
+    "PciOutOfResourceSetupPage": {},
+    "ReFlash": {
+      "0x1": {
+        "id": "0x1",
+        "guid": "80E1202E-2697-4264-9CC9-80762C3E5863",
+        "size": "0x7",
+        "name": "Setup"
+      },
+      "0x2": {
+        "id": "0x2",
+        "guid": "80E1202E-2697-4264-9CC9-80762C3E5863",
+        "size": "0x1",
+        "name": "Setup2"
+      },
+      "0xf002": {
+        "id": "0xf002",
+        "guid": "9CF0F18E-7C7D-49DE-B5AA-BBBAD6B21007",
+        "size": "0x2",
+        "name": "AMICallback"
+      },
+      "0xf000": {
+        "id": "0xf000",
+        "guid": "E770BB69-BCB4-4D04-9E97-23FF9456FEAC",
+        "size": "0x1",
+        "name": "SystemAccess"
+      }
+    },
+    "SataDevInfo": {},
+    "ServerMgmtSetup": {
+      "0xf000": {
+        "id": "0xf000",
+        "guid": "E770BB69-BCB4-4D04-9E97-23FF9456FEAC",
+        "size": "0x1",
+        "name": "SystemAccess"
+      },
+      "0x1": {
+        "id": "0x1",
+        "guid": "01239999-FC0E-4B6E-9E79-D54D5DB6CD20",
+        "size": "0x2fb",
+        "name": "ServerSetup"
+      },
+      "0x2": {
+        "id": "0x2",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x1",
+        "name": "HideBondingInfo"
+      },
+      "0x3": {
+        "id": "0x3",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x10",
+        "name": "LanEnableInfo"
+      },
+      "0x4": {
+        "id": "0x4",
+        "guid": "ADDEBF82-A560-46B9-A280-78C6AB61AEDA",
+        "size": "0x4",
+        "name": "ErrorManager"
+      },
+      "0x5": {
+        "id": "0x5",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x1",
+        "name": "AsrBackupBmcMacSetup"
+      }
+    },
+    "Setup": {
+      "0x1": {
+        "id": "0x1",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x174",
+        "name": "Setup"
+      },
+      "0xf009": {
+        "id": "0xf009",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x2",
+        "name": "PlatformLang"
+      },
+      "0xf00a": {
+        "id": "0xf00a",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x2",
+        "name": "PlatformLangCodes"
+      },
+      "0xf000": {
+        "id": "0xf000",
+        "guid": "E770BB69-BCB4-4D04-9E97-23FF9456FEAC",
+        "size": "0x1",
+        "name": "SystemAccess"
+      },
+      "0xf002": {
+        "id": "0xf002",
+        "guid": "9CF0F18E-7C7D-49DE-B5AA-BBBAD6B21007",
+        "size": "0x2",
+        "name": "AMICallback"
+      },
+      "0xf013": {
+        "id": "0xf013",
+        "guid": "C811FA38-42C8-4579-A9BB-60E94EDDFB34",
+        "size": "0x41",
+        "name": "AMITSESetup"
+      },
+      "0xf003": {
+        "id": "0xf003",
+        "guid": "B4909CF3-7B93-4751-9BD8-5BA8220B9BB2",
+        "size": "0x2",
+        "name": "BootManager"
+      },
+      "0xf005": {
+        "id": "0xf005",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x2",
+        "name": "Timeout"
+      },
+      "0xf006": {
+        "id": "0xf006",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x2",
+        "name": "BootOrder"
+      },
+      "0xf00d": {
+        "id": "0xf00d",
+        "guid": "19D96D3F-6A6A-47D2-B195-7B2432DA3BE2",
+        "size": "0x11c",
+        "name": "AddBootOption"
+      },
+      "0xf00e": {
+        "id": "0xf00e",
+        "guid": "F6C73719-F34C-479C-B32F-277FCBBCFE4F",
+        "size": "0x2",
+        "name": "DelBootOption"
+      },
+      "0xf007": {
+        "id": "0xf007",
+        "guid": "A56074DB-65FE-45F7-BD21-2D2BDD8E9652",
+        "size": "0x2",
+        "name": "LegacyDev"
+      },
+      "0xf016": {
+        "id": "0xf016",
+        "guid": "A56074DB-65FE-45F7-BD21-2D2BDD8E9652",
+        "size": "0x2",
+        "name": "LegacyGroup"
+      },
+      "0xf008": {
+        "id": "0xf008",
+        "guid": "A56074DB-65FE-45F7-BD21-2D2BDD8E9652",
+        "size": "0x2",
+        "name": "LegacyDevOrder"
+      },
+      "0xf014": {
+        "id": "0xf014",
+        "guid": "052E6EB0-F240-42C5-8309-45874545C6B4",
+        "size": "0x2",
+        "name": "BootNowCount"
+      },
+      "0xf00b": {
+        "id": "0xf00b",
+        "guid": "C57AD6B7-0515-40A8-9D21-551652854E37",
+        "size": "0x2",
+        "name": "Shell"
+      },
+      "0x2": {
+        "id": "0x2",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x1",
+        "name": "TcgNvmeVar"
+      },
+      "0x3": {
+        "id": "0x3",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x9",
+        "name": "PNP0501_0_VV"
+      },
+      "0x4": {
+        "id": "0x4",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x3",
+        "name": "PNP0501_0_NV"
+      },
+      "0x5": {
+        "id": "0x5",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x9",
+        "name": "PNP0501_1_VV"
+      },
+      "0x6": {
+        "id": "0x6",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x3",
+        "name": "PNP0501_1_NV"
+      },
+      "0x7": {
+        "id": "0x7",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x9",
+        "name": "PNP0501_2_VV"
+      },
+      "0x8": {
+        "id": "0x8",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x3",
+        "name": "PNP0501_2_NV"
+      },
+      "0x9": {
+        "id": "0x9",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x9",
+        "name": "PNP0501_3_VV"
+      },
+      "0xa": {
+        "id": "0xa",
+        "guid": "560BF58A-1E0D-4D7E-953F-2980A261E031",
+        "size": "0x3",
+        "name": "PNP0501_3_NV"
+      },
+      "0xb": {
+        "id": "0xb",
+        "guid": "8E31482A-72EA-4E08-AE30-232472BE3DD9",
+        "size": "0x1",
+        "name": "RefreshAttribRegistry"
+      },
+      "0xc": {
+        "id": "0xc",
+        "guid": "279B9A61-F654-49E3-A252-A0B76B7C3865",
+        "size": "0x3",
+        "name": "TerminalPortsEnableVar"
+      },
+      "0xd": {
+        "id": "0xd",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x7",
+        "name": "SetupCpuFeatures"
+      },
+      "0xe": {
+        "id": "0xe",
+        "guid": "C0B4FB05-15E5-4588-9FE9-B3D39C067715",
+        "size": "0x2",
+        "name": "DriverManager"
+      },
+      "0xf": {
+        "id": "0xf",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x2",
+        "name": "DriverOrder"
+      },
+      "0x10": {
+        "id": "0x10",
+        "guid": "6B0CC1BC-910F-411E-B6CB-0E314D0BB8C1",
+        "size": "0x1",
+        "name": "SioSetupData"
+      },
+      "0x11": {
+        "id": "0x11",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x2",
+        "name": "UsbMassDevNum"
+      },
+      "0x12": {
+        "id": "0x12",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x20",
+        "name": "UsbMassDevValid"
+      },
+      "0x13": {
+        "id": "0x13",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x4",
+        "name": "UsbControllerNum"
+      },
+      "0x14": {
+        "id": "0x14",
+        "guid": "EC87D643-EBA4-4BB5-A1E5-3F3E36B20DA9",
+        "size": "0x31",
+        "name": "UsbSupport"
+      },
+      "0x15": {
+        "id": "0x15",
+        "guid": "D1405D16-7AFC-4695-BB12-41459D3695A2",
+        "size": "0x8",
+        "name": "NetworkStackVar"
+      },
+      "0x16": {
+        "id": "0x16",
+        "guid": "3DD0DE67-02D7-4129-914A-9F377CC34B0D",
+        "size": "0x356",
+        "name": "HDDSecConfig"
+      },
+      "0x17": {
+        "id": "0x17",
+        "guid": "C9456C5D-6CA5-4B5B-B1B2-C75C905BB90F",
+        "size": "0x21",
+        "name": "NvmeDriverManager"
+      },
+      "0x18": {
+        "id": "0x18",
+        "guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+        "size": "0x7",
+        "name": "SecureBootSetup"
+      },
+      "0x19": {
+        "id": "0x19",
+        "guid": "7B59104A-C00D-4158-87FF-F04D6396A915",
+        "size": "0x6",
+        "name": "SecureVarPresent"
+      },
+      "0x1a": {
+        "id": "0x1a",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x1",
+        "name": "VendorKeys"
+      },
+      "0x1b": {
+        "id": "0x1b",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x1",
+        "name": "SetupMode"
+      },
+      "0x1c": {
+        "id": "0x1c",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x1",
+        "name": "SecureBoot"
+      },
+      "0x1d": {
+        "id": "0x1d",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x1",
+        "name": "AuditMode"
+      },
+      "0x1e": {
+        "id": "0x1e",
+        "guid": "8BE4DF61-93CA-11D2-AA0D-00E098032B8C",
+        "size": "0x1",
+        "name": "DeployedMode"
+      },
+      "0x1f": {
+        "id": "0x1f",
+        "guid": "A57AEAE9-A95A-4F1B-9FA7-D2C4F910C2E7",
+        "size": "0x1",
+        "name": "ChasisIDVarControl"
+      },
+      "0x20": {
+        "id": "0x20",
+        "guid": "2CB1647B-601B-42D8-8451-7DC23365B796",
+        "size": "0x1",
+        "name": "FruDataVarControl"
+      },
+      "0x21": {
+        "id": "0x21",
+        "guid": "165DD4A8-EDB4-489C-A8F0-8F83CDC5D002",
+        "size": "0x1",
+        "name": "IPMIHWMonitor"
+      },
+      "0x22": {
+        "id": "0x22",
+        "guid": "749EF5EB-23B2-43C3-9E29-F9F9F381C4CF",
+        "size": "0x4",
+        "name": "LanControl"
+      },
+      "0x23": {
+        "id": "0x23",
+        "guid": "B63BF800-F267-4F55-9217-E97FB3B69846",
+        "size": "0x2",
+        "name": "DynamicPageCount"
+      },
+      "0x24": {
+        "id": "0x24",
+        "guid": "0885F288-418C-4BE1-A6AF-8BAD61DA08FE",
+        "size": "0x2",
+        "name": "DriverHlthEnable"
+      },
+      "0x25": {
+        "id": "0x25",
+        "guid": "7459A7D4-6533-4480-BBA7-79E25A4443C9",
+        "size": "0x2",
+        "name": "DriverHealthCount"
+      },
+      "0x26": {
+        "id": "0x26",
+        "guid": "58279C2D-FB19-466E-B42E-CD437016DC25",
+        "size": "0x2",
+        "name": "DrvHealthCtrlCnt"
+      }
+    }
+  }
+}

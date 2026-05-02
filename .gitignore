@@ -1,0 +1,51 @@
+# Large / derived / sensitive — not committed.
+
+# Raw BIOS images and zips (large; potentially contain board-specific keys).
+images/
+
+# UEFIExtract output (derivable from images/).
+extracted/
+
+# Per-version IFR text dumps (derivable).
+ifr/
+
+# Extracted APCB blobs (derivable).
+apcb_work/
+
+# Source-built UEFITool toolchain (build it from upstream).
+tools/
+
+# Reference repos cloned by research agents (re-clone as needed).
+edk2-platforms/
+openSIL/
+coreboot/
+ahib/
+
+# Python bytecode.
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# r2 project / cache files.
+*.r2/
+.r2_history
+
+# OS junk.
+.DS_Store
+Thumbs.db
+
+# Editor scratch.
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Backup files.
+*.bak
+*.orig
+
+# Local-only environment (analyst-private notes).
+.local/
+notes-private.md
