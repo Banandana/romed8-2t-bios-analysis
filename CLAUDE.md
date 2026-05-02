@@ -29,7 +29,7 @@
 
 **Committed:**
 - All Phase 1 + Phase 2 finding docs in `docs/`
-- `BIOS_LATEST.md` (canonical synthesis), `REPORT.md` (long-form), `FINDINGS.md` (Phase 1 baseline)
+- `BIOS_LATEST.md` (canonical synthesis), `report/` (long-form Phase 1 narrative, split per part), `FINDINGS.md` (Phase 1 baseline)
 - All scripts in `scripts/` and shared lib `scripts/lib/`
 - `README.md` with onboarding procedure
 
@@ -61,7 +61,8 @@ The radare2 MCP server is registered in `~/.claude.json` under `mcpServers.radar
 ```
 ~/Desktop/romed8-2t-bios-analysis/
 ├── BIOS_LATEST.md                ← canonical synthesis (read this first)
-├── REPORT.md                     ← Phase 1 long-form narrative
+├── REPORT.md                     ← stub; long-form report now under report/
+├── report/                       ← Phase 1 long-form narrative, split per part
 ├── FINDINGS.md                   ← Phase 1 baseline
 ├── README.md                     ← onboarding / re-downloading BIOS images
 ├── CLAUDE.md                     ← this file

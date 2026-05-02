@@ -118,7 +118,7 @@ Verified properties:
 - Spot-check: byte 0x123 = 0x00 (Auto) — matches the IFR
   `OneOfOption "Auto" Value: 0, Default` for PCIE1.
 
-Diff against the rig values recorded in `REPORT.md` Part III §Q4
+Diff against the rig values recorded in [`../report/part-3-empirical-followup.md`](../report/part-3-empirical-followup.md) §Q4
 (only those bytes are known empirically; a full rig dump was not provided):
 
 | Setup offset | Shipped factory | Rig current | Differs? | Setting          |
@@ -182,12 +182,14 @@ Instead the relevant diffs use **IFR defaults** as the shipped baseline.
 | 0x169              | 0x0F (Auto)         | 0x0F        | no       | factory                                                 |
 | 0x16A              | 0xFF (Auto)         | 0xFF        | no       | factory                                                 |
 
-The other 0x03 / 0x04 bytes scattered through `AmdSetupSSP` per `REPORT.md`
+The other 0x03 / 0x04 bytes scattered through `AmdSetupSSP` per
+[`../report/part-3-empirical-followup.md`](../report/part-3-empirical-followup.md)
 (`0x002, 0x026, 0x02e, 0x032, 0x0a8-0x0aa, 0x0b0-0x0b3, 0x0b6-0x0b7,
 0x0be, 0x0ca-0x0cb, 0x0eb, 0x0ed, 0x106, 0x136, 0x14e, 0x1ba, 0x1bc,
 0x1cc, 0x1ce`) sit at offsets that have no IFR-mapped question (verified
-in `REPORT.md` Part III: "none of the `0x03` or `0x04` bytes…are at
-offsets backed by any PCIe-related IFR setting"). They are AGESA-internal
+in [Part III](../report/part-3-empirical-followup.md): "none of the
+`0x03` or `0x04` bytes…are at offsets backed by any PCIe-related IFR
+setting"). They are AGESA-internal
 state that DXE writes during init — not user clicks. Status: **not
 user-writes; AGESA-init writes**.
 
@@ -235,7 +237,7 @@ This is consistent with the symptom that motivated the project: the user
 recalls "clicking something" in the AMD PCIE Link Speed menu. The click
 **did** write the per-slot bytes. The fact that nothing changed at the
 hardware level is explained — separately and already in `FINDINGS.md` /
-`REPORT.md` — by AGESA / DXIO ignoring those bytes on P3.70 (per-slot
+[`../report/`](../report/README.md) — by AGESA / DXIO ignoring those bytes on P3.70 (per-slot
 IFR is a UI placebo on this BIOS). But the click was not lost: the writes
 took effect at the NVRAM-variable level. They simply have no consumer in
 the platform-init path.
@@ -284,4 +286,4 @@ Files referenced:
 - `ifr/P3.70/_all/72_Setup.pe32.0.0.en-US.uefi.ifr.txt`
 - `ifr/P3.70/_all/CbsSetupDxeSSP.pe32.0.0.en-US.uefi.ifr.txt`
 - `ifr/P3.70/_all/CbsSetupDxeZP.pe32.0.0.en-US.uefi.ifr.txt`
-- `REPORT.md` Part III §Q4 (rig empirical bytes)
+- [`../report/part-3-empirical-followup.md`](../report/part-3-empirical-followup.md) §Q4 (rig empirical bytes)

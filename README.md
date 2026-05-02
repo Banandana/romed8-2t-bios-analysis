@@ -11,7 +11,8 @@ Reverse-engineering and reusable analysis tooling for ASRock Rack ROMED8-2T BIOS
 ├── README.md                  ← you are here
 ├── CLAUDE.md                  ← agent operational context (project state, hot leads, in-flight work)
 ├── BIOS_LATEST.md             ← latest synthesis report
-├── REPORT.md                  ← long-form Part I/II/III narrative + full IFR reference
+├── REPORT.md                  ← stub; long-form report now lives in report/
+├── report/                    ← Phase 1 long-form narrative, split per part
 ├── docs/                      ← per-investigation findings (one .md per question)
 ├── scripts/                   ← reusable analysis tooling
 │   └── lib/                   ← shared Python modules (importable from any script)
